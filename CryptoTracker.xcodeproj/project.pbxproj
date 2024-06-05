@@ -17,6 +17,13 @@
 		F263C81E2C0F8E6E00DA5E1C /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C81D2C0F8E6E00DA5E1C /* CoinModel.swift */; };
 		F263C8202C0F975B00DA5E1C /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C81F2C0F975B00DA5E1C /* CoinRowView.swift */; };
 		F263C8242C0F9E6B00DA5E1C /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8232C0F9E6B00DA5E1C /* Double.swift */; };
+		F263C8262C0FA65400DA5E1C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8252C0FA65400DA5E1C /* HomeViewModel.swift */; };
+		F263C82C2C10A18100DA5E1C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C82B2C10A18100DA5E1C /* Endpoint.swift */; };
+		F263C82E2C10A98700DA5E1C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C82D2C10A98700DA5E1C /* APIError.swift */; };
+		F263C8302C10ACDC00DA5E1C /* ApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C82F2C10ACDC00DA5E1C /* ApiProtocol.swift */; };
+		F263C8322C10AD7900DA5E1C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8312C10AD7900DA5E1C /* ApiClient.swift */; };
+		F263C8342C10B21800DA5E1C /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8332C10B21800DA5E1C /* Mockable.swift */; };
+		F263C8362C10B43C00DA5E1C /* CryptoEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8352C10B43C00DA5E1C /* CryptoEndpoints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +38,13 @@
 		F263C81D2C0F8E6E00DA5E1C /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		F263C81F2C0F975B00DA5E1C /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		F263C8232C0F9E6B00DA5E1C /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F263C8252C0FA65400DA5E1C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F263C82B2C10A18100DA5E1C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F263C82D2C10A98700DA5E1C /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		F263C82F2C10ACDC00DA5E1C /* ApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProtocol.swift; sourceTree = "<group>"; };
+		F263C8312C10AD7900DA5E1C /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F263C8332C10B21800DA5E1C /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
+		F263C8352C10B43C00DA5E1C /* CryptoEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEndpoints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				F263C8092C0F57C500DA5E1C /* Extensions */,
+				F263C8272C1095AA00DA5E1C /* Service */,
 				F263C81C2C0F8E4C00DA5E1C /* Models */,
 				F263C8102C0F612900DA5E1C /* Core */,
 				F263C7F92C0F553600DA5E1C /* CryptoTrackerApp.swift */,
@@ -104,6 +119,7 @@
 			children = (
 				F263C8132C0F614F00DA5E1C /* ViewModels */,
 				F263C8122C0F614800DA5E1C /* Views */,
+				F263C8352C10B43C00DA5E1C /* CryptoEndpoints.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 		F263C8132C0F614F00DA5E1C /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F263C8252C0FA65400DA5E1C /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -147,6 +164,18 @@
 				F263C81D2C0F8E6E00DA5E1C /* CoinModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F263C8272C1095AA00DA5E1C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F263C82B2C10A18100DA5E1C /* Endpoint.swift */,
+				F263C82D2C10A98700DA5E1C /* APIError.swift */,
+				F263C82F2C10ACDC00DA5E1C /* ApiProtocol.swift */,
+				F263C8312C10AD7900DA5E1C /* ApiClient.swift */,
+				F263C8332C10B21800DA5E1C /* Mockable.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,13 +249,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F263C8152C0F616400DA5E1C /* HomeView.swift in Sources */,
+				F263C82C2C10A18100DA5E1C /* Endpoint.swift in Sources */,
+				F263C8262C0FA65400DA5E1C /* HomeViewModel.swift in Sources */,
 				F263C7FA2C0F553600DA5E1C /* CryptoTrackerApp.swift in Sources */,
+				F263C8302C10ACDC00DA5E1C /* ApiProtocol.swift in Sources */,
+				F263C8342C10B21800DA5E1C /* Mockable.swift in Sources */,
 				F263C8242C0F9E6B00DA5E1C /* Double.swift in Sources */,
 				F263C8192C0F628100DA5E1C /* CircleButtonView.swift in Sources */,
 				F263C80B2C0F57D200DA5E1C /* Color.swift in Sources */,
+				F263C8322C10AD7900DA5E1C /* ApiClient.swift in Sources */,
 				F263C81B2C0F66C700DA5E1C /* CircleButtonAnimationView.swift in Sources */,
 				F263C8202C0F975B00DA5E1C /* CoinRowView.swift in Sources */,
 				F263C81E2C0F8E6E00DA5E1C /* CoinModel.swift in Sources */,
+				F263C8362C10B43C00DA5E1C /* CryptoEndpoints.swift in Sources */,
+				F263C82E2C10A98700DA5E1C /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
