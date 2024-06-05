@@ -22,6 +22,8 @@ struct HomeView: View {
             VStack {
                 homeHeader
                 
+                SearchBarView(searchText: $viewModel.searchText)
+                
                 columnTitles
                 
                 if !showPortfolio {
@@ -93,7 +95,7 @@ extension HomeView {
     
     private var allCoinsList: some View {
         List {
-            ForEach(viewModel.allCoins) { coin in
+            ForEach(viewModel.filteredCoins) { coin in
                 CoinRowView(coin: coin, showHoldingsColumn: false)
                     .listRowInsets(.init(top: 10, leading: 0, bottom: 10, trailing: 10))
             }

@@ -24,6 +24,10 @@
 		F263C8322C10AD7900DA5E1C /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8312C10AD7900DA5E1C /* ApiClient.swift */; };
 		F263C8342C10B21800DA5E1C /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8332C10B21800DA5E1C /* Mockable.swift */; };
 		F263C8362C10B43C00DA5E1C /* CryptoEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8352C10B43C00DA5E1C /* CryptoEndpoints.swift */; };
+		F263C8392C10D68400DA5E1C /* CoinImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8382C10D68400DA5E1C /* CoinImageView.swift */; };
+		F263C83C2C10D84700DA5E1C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F263C83B2C10D84700DA5E1C /* Kingfisher */; };
+		F263C83F2C10DC1E00DA5E1C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C83E2C10DC1E00DA5E1C /* SearchBarView.swift */; };
+		F263C8412C10E06600DA5E1C /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F263C8402C10E06600DA5E1C /* UIApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,9 @@
 		F263C8312C10AD7900DA5E1C /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		F263C8332C10B21800DA5E1C /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		F263C8352C10B43C00DA5E1C /* CryptoEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoEndpoints.swift; sourceTree = "<group>"; };
+		F263C8382C10D68400DA5E1C /* CoinImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinImageView.swift; sourceTree = "<group>"; };
+		F263C83E2C10DC1E00DA5E1C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		F263C8402C10E06600DA5E1C /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F263C83C2C10D84700DA5E1C /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +109,7 @@
 			children = (
 				F263C80A2C0F57D200DA5E1C /* Color.swift */,
 				F263C8232C0F9E6B00DA5E1C /* Double.swift */,
+				F263C8402C10E06600DA5E1C /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -144,6 +153,8 @@
 		F263C8162C0F625D00DA5E1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F263C83D2C10DC0500DA5E1C /* SearchBarView */,
+				F263C8372C10D67600DA5E1C /* CoinImage */,
 				F263C8172C0F627200DA5E1C /* CircleButton */,
 			);
 			path = Components;
@@ -178,6 +189,22 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		F263C8372C10D67600DA5E1C /* CoinImage */ = {
+			isa = PBXGroup;
+			children = (
+				F263C8382C10D68400DA5E1C /* CoinImageView.swift */,
+			);
+			path = CoinImage;
+			sourceTree = "<group>";
+		};
+		F263C83D2C10DC0500DA5E1C /* SearchBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F263C83E2C10DC1E00DA5E1C /* SearchBarView.swift */,
+			);
+			path = SearchBarView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +221,9 @@
 			dependencies = (
 			);
 			name = CryptoTracker;
+			packageProductDependencies = (
+				F263C83B2C10D84700DA5E1C /* Kingfisher */,
+			);
 			productName = CryptoTracker;
 			productReference = F263C7F62C0F553600DA5E1C /* CryptoTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -222,6 +252,9 @@
 				Base,
 			);
 			mainGroup = F263C7ED2C0F553600DA5E1C;
+			packageReferences = (
+				F263C83A2C10D84700DA5E1C /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = F263C7F72C0F553600DA5E1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -248,11 +281,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F263C8412C10E06600DA5E1C /* UIApplication.swift in Sources */,
 				F263C8152C0F616400DA5E1C /* HomeView.swift in Sources */,
 				F263C82C2C10A18100DA5E1C /* Endpoint.swift in Sources */,
 				F263C8262C0FA65400DA5E1C /* HomeViewModel.swift in Sources */,
 				F263C7FA2C0F553600DA5E1C /* CryptoTrackerApp.swift in Sources */,
 				F263C8302C10ACDC00DA5E1C /* ApiProtocol.swift in Sources */,
+				F263C8392C10D68400DA5E1C /* CoinImageView.swift in Sources */,
 				F263C8342C10B21800DA5E1C /* Mockable.swift in Sources */,
 				F263C8242C0F9E6B00DA5E1C /* Double.swift in Sources */,
 				F263C8192C0F628100DA5E1C /* CircleButtonView.swift in Sources */,
@@ -262,6 +297,7 @@
 				F263C8202C0F975B00DA5E1C /* CoinRowView.swift in Sources */,
 				F263C81E2C0F8E6E00DA5E1C /* CoinModel.swift in Sources */,
 				F263C8362C10B43C00DA5E1C /* CryptoEndpoints.swift in Sources */,
+				F263C83F2C10DC1E00DA5E1C /* SearchBarView.swift in Sources */,
 				F263C82E2C10A98700DA5E1C /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +502,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F263C83A2C10D84700DA5E1C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F263C83B2C10D84700DA5E1C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F263C83A2C10D84700DA5E1C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F263C7EE2C0F553600DA5E1C /* Project object */;
 }
