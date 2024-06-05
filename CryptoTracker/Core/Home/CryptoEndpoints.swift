@@ -10,6 +10,7 @@ import Foundation
 enum CryptoEndpoints: Endpoint {
     
     case getCoins
+    case market
     
     var baseURL: String {
         return "api.coingecko.com"
@@ -19,6 +20,8 @@ enum CryptoEndpoints: Endpoint {
         switch self {
         case .getCoins:
             return "/api/v3/coins/markets"
+        case .market:
+            return "/api/v3/global"
         }
     }
     
@@ -35,6 +38,8 @@ enum CryptoEndpoints: Endpoint {
         case .getCoins:
             return [URLQueryItem(name: "vs_currency", value: "usd"),
                     URLQueryItem(name: "sparkline", value: "1")]
+        case .market:
+            return nil
         }
     }
     

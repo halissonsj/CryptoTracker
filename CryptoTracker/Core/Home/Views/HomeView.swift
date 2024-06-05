@@ -19,8 +19,11 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             // content layer
-            VStack {
+            VStack(spacing: 16) {
                 homeHeader
+                
+                HomeStatsView(stats: viewModel.marketStats,
+                              showPortfolio: $showPortfolio)
                 
                 SearchBarView(searchText: $viewModel.searchText)
                 
@@ -39,6 +42,7 @@ struct HomeView: View {
         }
         .task {
             await viewModel.getCoins()
+            await viewModel.getMarketInfo()
         }
     }
 }

@@ -9,6 +9,7 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
+    @Published private(set) var marketStats: [StatisticModel] = []
     @Published private(set) var allCoins: [CoinModel] = []
     @Published private(set) var portfolioCoins: [CoinModel] = []
     @Published var searchText: String = ""
@@ -29,6 +30,13 @@ class HomeViewModel: ObservableObject {
         self.service = service
     }
     
+    func getStatisticsModel(for marketInfo: MarketModel) -> [StatisticModel] {
+        return [StatisticModel(title: "MarketCap", value: marketInfo.marketCap, percentageChange: marketInfo.marketCapChangePercentage24HUsd),
+                StatisticModel(title: "24H Volume", value: marketInfo.volume),
+                StatisticModel(title: "BTC Dominance", value: marketInfo.btcDominance),
+                StatisticModel(title: "Portfolio Value", value: "$0.00", percentageChange: 0)]
+    }
+    
     @MainActor
     func getCoins() async {
         let endpoint = CryptoEndpoints.getCoins
@@ -38,6 +46,21 @@ class HomeViewModel: ObservableObject {
                 let coins = try await service.asyncRequest(endpoint: endpoint, 
                                                            responseModel: [CoinModel].self)
                 self.allCoins = coins
+            } catch let error as ApiError {
+                print(error.message)
+            }
+        }
+    }
+    
+    @MainActor
+    func getMarketInfo() async {
+        let endpoint = CryptoEndpoints.market
+        
+        Task {
+            do {
+                let info = try await service.asyncRequest(endpoint: endpoint,
+                                                          responseModel: MarketResponseModel.self)
+                self.marketStats = getStatisticsModel(for: info.data)
             } catch let error as ApiError {
                 print(error.message)
             }
