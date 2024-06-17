@@ -30,6 +30,7 @@ struct HomeView: View {
                               showPortfolio: $showPortfolio)
                 
                 SearchBarView(searchText: $viewModel.searchText)
+                    .padding()
                 
                 columnTitles
                 

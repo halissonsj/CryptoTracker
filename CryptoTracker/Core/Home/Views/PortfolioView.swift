@@ -15,6 +15,7 @@ struct PortfolioView: View {
     
     @State private var selectedCoin: CoinModel? = nil
     @State private var quantityText: String = ""
+    @State private var showSaveButton: Bool = false
     
     var body: some View {
         NavigationView {
@@ -22,7 +23,7 @@ struct PortfolioView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     
                     SearchBarView(searchText: $searchText)
-                        .padding(.horizontal)
+                        .padding()
                     
                     coinLogoList
                     
@@ -35,6 +36,10 @@ struct PortfolioView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     XMarkButton(dismiss: _dismiss)
+                }
+                
+                ToolbarItem(placement: .topBarTrailing) {
+                    traillingNavBarButton
                 }
             }
         }
@@ -157,6 +162,43 @@ extension PortfolioView {
         .animation(.none)
         .padding()
         .font(.headline)
-
+    }
+    
+    private var traillingNavBarButton: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "checkmark")
+                .opacity(showSaveButton ? 1.0 : 0.0)
+            
+            Button(action: {
+                saveButtonPresset()
+            }) {
+                Text("Save")
+            }
+            .opacity((selectedCoin != nil && selectedCoin?.currentHoldings != Double(quantityText)) ? 1.0 : 0.0)
+        }
+        .font(.headline)
+    }
+    
+    private func saveButtonPresset() {
+        guard let coin = selectedCoin else { return }
+        
+        // save to portfolio
+        
+        withAnimation(.easeIn) {
+            showSaveButton = true
+        }
+        
+        UIApplication.shared.endEditing()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.easeIn) {
+                showSaveButton = false
+            }
+        }
+    }
+    
+    private func removeSelectedCoin() {
+        selectedCoin = nil
+        searchText = ""
     }
 }
